@@ -1,5 +1,6 @@
 # FewShotKDVigilance
 [JMI 2027] Code release for the journal extension
+
 [SPIE 2026] Code release for EEG-to-fMRI knowledge distillation empowers few-shot resting-state fMRI vigilance detection
 
 This codebase is developed based on [<a href="#ref1">1</a>][<a href="#ref2">2</a>][<a href="#ref5">5</a>][<a href="#ref6">6</a>][<a href="#ref7">7</a>]
@@ -78,6 +79,7 @@ Activate the environment:
 cd EEGPT/downstream/
 conda activate fewshot_eegpt
 ```
+## Task 1:
 ### Stage 1: Vigilance-Guided Latent Space
 Note: after training, please rename the best checkpoint to 'best.ckpt'. 
 ```bash
@@ -110,7 +112,19 @@ nohup python stage2_labramBIOTEEGPT_kd_transformer_test_visualizations.py > stag
 # Epilepsy patients
 nohup python stage2_labramBIOTEEGPT_kd_transformer_test_visualizations_vpat_gt.py > stage2_labramBIOTEEGPT_kd_transformer_test_visualizations_vpat_gt.txt & 
 ```
-The predictions will be saved at checkpointdirectory/datasetname. Then, go to visualization_umaps.ipynb. Use the same environment for running the notebook. 
+The predictions will be saved at checkpointdirectory/datasetname. Then, go to visualization_umaps.ipynb. Use the same environment for running the notebook.
+
+## Task 2:
+### Training for both stages
+```bash
+nohup python stage0_labram_train.py > stage0_labram_train.txt &
+
+nohup python stage1_labram_kd_tcn.py > stage1_labram_kd_tcn.txt &
+```
+### Testing
+```bash
+stage1_labram_kd_tcn_visualizations.ipynb
+```
 
 ## Potential Questions
 Please reach out to chang.li@vanderbilt.edu.

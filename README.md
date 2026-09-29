@@ -1,4 +1,5 @@
 # FewShotKDVigilance
+[JMI 2027] Code release for the journal extension
 [SPIE 2026] Code release for EEG-to-fMRI knowledge distillation empowers few-shot resting-state fMRI vigilance detection
 
 This codebase is developed based on [<a href="#ref1">1</a>][<a href="#ref2">2</a>][<a href="#ref5">5</a>][<a href="#ref6">6</a>][<a href="#ref7">7</a>]
